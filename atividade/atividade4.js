@@ -2,8 +2,8 @@
 e o resto da divisão destes dois valores*/
 
 function divisao(dividendo, divisor){
-    console.log(dividendo / divisor)
+    console.log(Math.floor(dividendo / divisor))
     return dividendo % divisor
 }
 
-console.log(divisao(10, 2))
+console.log(divisao(11, 4))
