@@ -1,11 +1,24 @@
 {
-    "users": [{
-        "id": 1,
-        "name": "Arthus Oliveira",
-        "email": "aoliveira@cod4r.com.br"
-    }, {
-        "id": 2,
-        "name": "Maria Julia da Silva",
-        "email": "mjds@empresa.com"
-    }]
+  "users": [
+    {
+      "id": 1,
+      "name": "Arthus Oliveira",
+      "email": "aoliveira@cod4r.com.br"
+    },
+    {
+      "id": 2,
+      "name": "Maria Julia da Silva",
+      "email": "mjds@empresa.com"
+    },
+    {
+      "name": "Ana Silva ",
+      "email": "AnaSilva@negocio.com.br",
+      "id": 3
+    },
+    {
+      "name": "Abner Wesley Ribeiro",
+      "email": "AbnerW_@hotmail.com",
+      "id": 4
+    }
+  ]
 }
