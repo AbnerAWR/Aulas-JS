@@ -7,9 +7,41 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
-
+    <div id="app">
+        <p>R${{ contador }}</p>
+        <p>
+            <button v-on:click="add">+1</button>
+            <button v-on:click="contador += contador">C+1</button>
+            <button @click="contador -= 2">-2</button>
+            <button @click="contador = 0">0</button>
+        </p>
+        <p @mousemove="atualizarPosicao">
+            Coodernadas: {{x}} e {{y}}
+            <span @mousemove.stop>Aqui Não</span>
+        </p>
+        <input type="text" @keyup.enter="alerta">
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                x: 0,
+                y: 0,
+                contador: 1
+            },
+            methods: {
+                add() {
+                    this.contador++
+                },
+                atualizarPosicao(e) {
+                    this.x = e.clientX
+                    this.y = e.clientY
+                },
+                alerta(){
+                    alert("Enter!")
+                }
+            }
+        })
     </script>
 </body>
 </html>
