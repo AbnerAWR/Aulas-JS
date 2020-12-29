@@ -46,7 +46,8 @@ export default class Calculator extends Component {
             values[1] = 0
 
             this.setState({
-                displayValue: values[0],
+                
+                displayValue: equals ? values[0].toFixed(2) : values[0],
                 operation: equals ? null : operation,
                 current: equals ? 0 : 1,
                 clearDisplay: !equals,
@@ -68,7 +69,7 @@ export default class Calculator extends Component {
 
         if(n !== '.') {
             const i = this.state.current
-            const newValue = parseFloat(displayValue)
+            const newValue = parseFloat(displayValue).toFixed(2)
             const values = [...this.state.values]
             values[i] = newValue
             this.setState({ values })
