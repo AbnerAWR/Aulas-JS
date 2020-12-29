@@ -82,7 +82,7 @@ export default {
             this.values[this.current] = parseFloat(displayValue).toFixed(2)
             console.log(this.current)
             
-    
+        //teste
             // Alternativa 
             // if (n !== "."){
             //     const i = this.current
