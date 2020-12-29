@@ -20,7 +20,7 @@ export default {
 }
 
 * {
-    font-family: "RobotoMono", monospacez;
+    font-family: "RobotoMono", monospace;
 }
 
 body{ 

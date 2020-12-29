@@ -1,4 +1,5 @@
 <template>
+    
     <div class="calculator">
         <Display :value="displayValue"/>
         <Button label="AC" triple @onClick="clearMemory"/>
@@ -19,13 +20,12 @@
         <Button label="." @onClick="addDigit"/>
         <Button label="=" operation @onClick="setOperation"/>
 
-        
     </div>
 </template>
 
 <script>
-import Display from "../components/Display"
-import Button from "../components/Button"
+import Display from "../components/Display";
+import Button from "../components/Button";
 
 export default {
     data: function() {
@@ -36,6 +36,7 @@ export default {
             values: [0, 0],
             current: 0
         }
+        
     },
     components: { Button, Display},
     methods: {
@@ -60,10 +61,11 @@ export default {
                 }
                 this.values[1] = 0
 
-                this.displayValue = this.values[0]
+                this.displayValue = equals ? this.values[0].toFixed(2) : this.values[0]
                 this.operation = equals ? null : operation
                 this.current = equals ? 0 : 1
                 this.clearDisplay = !equals
+                
             }
         },
         addDigit(n){
@@ -77,12 +79,14 @@ export default {
 
             this.displayValue = displayValue
             this.clearDisplay = false
-            this.values[this.current] = displayValue 
+            this.values[this.current] = parseFloat(displayValue).toFixed(2)
+            console.log(this.current)
+            
     
-    // Alternativa 
+            // Alternativa 
             // if (n !== "."){
             //     const i = this.current
-            //     const newValue = parseFloat(displayValue)
+            //     const newValue = parseFloat(displayValue).toFixed(2)
             //     this.values[i] = newValue 
             // }
         }
