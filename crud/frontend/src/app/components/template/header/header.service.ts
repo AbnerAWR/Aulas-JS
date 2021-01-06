@@ -15,7 +15,7 @@ export class HeaderService {
 
   constructor() { }
 
-  get headerData (): HeaderData {
+  get headerData(): HeaderData {
     return this._headerData.value
   }
 

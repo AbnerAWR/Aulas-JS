@@ -9,12 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor(private headerService: HeaderService) {
-    headerService.headerData = { 
+    headerService.headerData = {
       title: 'Início',
       icon: 'home',
-      routeUrl: '/'
+      routeUrl: ''
     }
-   }
+  }
 
   ngOnInit(): void {
   }
