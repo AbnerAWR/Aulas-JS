@@ -6,7 +6,7 @@ app.use('/opa', (req, res, next) => {
     next()
 })
 
-app.get('/opa', (req, res) => {
+app.get('/opa', (req, res, next) => {
     console.log('Durante....')
     res.json({
         data: [
@@ -20,6 +20,7 @@ app.get('/opa', (req, res) => {
         status: 200
     })
     
+    next()
         // res.send('Estou bem!')
     
         // res.json ({
