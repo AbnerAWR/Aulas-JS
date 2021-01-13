@@ -1,7 +1,19 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 
 const saudacao = require('./saudacaoMid')
+const usuarioApi = require('./api/usuario')
+require('./api/produto')(app, 'com param!')
+
+app.post('/usuario', usuarioApi.salvar)
+app.get('/usuario', usuarioApi.obter)
+
+app.use(bodyParser.text())
+
+app.use(bodyParser.json())
+
+app.use(bodyParser.urlencoded({extended: true}))
 
 app.use(saudacao('Guilherme'))
 
@@ -9,6 +21,26 @@ app.use('/opa', (req, res, next) => {
     console.log('Antes....')
     next()
 })
+
+app.get('/clientes/relatorio', (req, res) => {
+    res.send(`Cliente relatorio: completo ${req.query.completo} ano = ${req.query.ano}`)
+})
+
+app.post('/corpo',(req, res) => {
+    // let corpo = ''
+    // req.on('data', function (parte) {
+    //     corpo += parte 
+    // })
+    // req.on('end', function (){
+    //     res.send(corpo)
+    // })
+    res.send(JSON.stringify(req.body))
+})
+
+app.get('/cliente/:id', (req,  res) => {
+    res.send(`Cliente ${req.params.id} selecionado!`)
+})
+
 
 app.get('/opa', (req, res, next) => {
     console.log('Durante....')
