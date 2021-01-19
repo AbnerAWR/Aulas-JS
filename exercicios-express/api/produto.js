@@ -12,3 +12,5 @@ module.exports = (app, texto) => {
 
     return {salvar, obter}
 }
+
+//apenas um commit
