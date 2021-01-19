@@ -27,13 +27,13 @@ app.get('/clientes/relatorio', (req, res) => {
 })
 
 app.post('/corpo',(req, res) => {
-    // let corpo = ''
-    // req.on('data', function (parte) {
-    //     corpo += parte 
-    // })
-    // req.on('end', function (){
-    //     res.send(corpo)
-    // })
+    let corpo = ''
+    req.on('data', function (parte) {
+        corpo += parte 
+    })
+    req.on('end', function (){
+        res.send(corpo)
+    })
     res.send(JSON.stringify(req.body))
 })
 
